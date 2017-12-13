@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" type="text/css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-<link rel="stylesheet" href="index.css" type="text/css">
+<link rel="stylesheet" href="css/index.css" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
   $(document).ready(function () {
@@ -34,38 +34,17 @@
     $('#webemail').append(' '+vmmail+'@'+vmdomain);
 
     //Send contact email
-    $('#sendcontactbtn').click(function(){
-			contactname=$('#contactname').val();
-      contactemail=$('#contactemail').val();
-      contactcomment=$('#contactcomment').val();
-      $('#contactname').val('');
-      $('#contactemail').val('');
-
-			$.post(
-	      'contactemail.php',
-        {
-					cname:contactname,
-          cemail:contactemail,
-          ccomment:contactcomment
-        },
-    	  function(data){
-					$('#contactcomment').val('Mensaje enviado');
-        }
-      );
-    });
-
-    // this is the id of the form
     $("#contactform").submit(function(e){
 
       $.post(
-        'contactemail.php',
-        $("#idForm").serialize(), // serializes the form's elements.
+        'scripts/contactemail.php',
+        $("#contactform").serialize(),
         function(data){
-          alert(data); // show response from the php script.
+          $('#successcontact').removeClass('w3-hide');
         }
       );
 
-      e.preventDefault(); // avoid to execute the actual submit of the form.
+      e.preventDefault(); //Avoid default submit
     });
   });
 
@@ -348,17 +327,18 @@
             <br>
             <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i><span id="webemail">Email: </span>
             <br>
+            <div id="successcontact" class="w3-panel w3-green w3-card-4 w3-hide"><p>Mensaje enviado<i class="fa fa-check w3-margin-left"></i></p></div>
           </div>
           <form id="contactform">
             <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
               <div class="w3-half">
-                <input class="w3-input w3-border" type="text" placeholder="Nombre" required name="Name">
+                <input class="w3-input w3-border" type="text" placeholder="Nombre" required name="name">
               </div>
               <div class="w3-half">
-                <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+                <input class="w3-input w3-border" type="email" placeholder="Email" required name="email">
               </div>
             </div>
-            <textarea class="w3-input w3-border" placeholder="Mensaje" required name="Message"></textarea>
+            <textarea class="w3-input w3-border" placeholder="Mensaje" required name="message"></textarea>
             <button class="w3-button w3-black w3-right w3-section" type="submit">
               <i class="fa fa-paper-plane"></i> ENVIAR
             </button>

@@ -29,21 +29,21 @@
   /* First image (Logo. Full height) */
 
   .bgimg-1 {
-    background-image: url('main.jpg');
+    background-image: url('../images/main.jpg');
     min-height: 100%;
   }
 
   /* Second image (Portfolio) */
 
   .bgimg-2 {
-    background-image: url("main2.png");
+    background-image: url("../images/main2.png");
     min-height: 400px;
   }
 
   /* Third image (Contact) */
 
   .bgimg-3 {
-    background-image: url("main3.png");
+    background-image: url("../images/main3.png");
     min-height: 400px;
   }
 
@@ -61,31 +61,31 @@
 
   .fa-javascript{
     width: 20%;
-    content: url("javascript.svg");
+    content: url("../images/javascript.svg");
   }
   .fa-php{
     width: 20%;
-    content: url("php.svg");
+    content: url("../images/php.svg");
   }
   .fa-bootstrap{
     width: 20%;
-    content: url("bootstrap.png");
+    content: url("../images/bootstrap.png");
   }
   .fa-ajax{
     width: 40%;
-    content: url("ajax.png");
+    content: url("../images/ajax.png");
   }
   .fa-json{
     width: 20%;
-    content: url("json.svg");
+    content: url("../images/json.svg");
   }
   .fa-mysql{
     width: 20%;
-    content: url("mysql.svg");
+    content: url("../images/mysql.svg");
   }
   .fa-jquery{
     width: 20%;
-    content: url("jquery.png");
+    content: url("../images/jquery.png");
   }
 
   /* Turn off parallax scrolling for tablets and phones */
