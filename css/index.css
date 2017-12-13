@@ -61,11 +61,11 @@
 
   .fa-javascript{
     width: 20%;
-    content: url("../images/javascript.svg");
+    content: url("../images/javascript.png");
   }
   .fa-php{
     width: 20%;
-    content: url("../images/php.svg");
+    content: url("../images/php.png");
   }
   .fa-bootstrap{
     width: 20%;
@@ -77,11 +77,11 @@
   }
   .fa-json{
     width: 20%;
-    content: url("../images/json.svg");
+    content: url("../images/json.png");
   }
   .fa-mysql{
     width: 20%;
-    content: url("../images/mysql.svg");
+    content: url("../images/mysql.png");
   }
   .fa-jquery{
     width: 20%;

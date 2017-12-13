@@ -29,17 +29,17 @@
     });
 
     //Antispam email
-    var vmmail='lauta.nahuel94';
-    var vmdomain='gmail.com';
-    $('#webemail').append(' '+vmmail+'@'+vmdomain);
+    var vmmail = 'lauta.nahuel94';
+    var vmdomain = 'gmail.com';
+    $('#webemail').append(' ' + vmmail + '@' + vmdomain);
 
     //Send contact email
-    $("#contactform").submit(function(e){
+    $("#contactform").submit(function (e) {
 
       $.post(
         'scripts/contactemail.php',
         $("#contactform").serialize(),
-        function(data){
+        function (data) {
           $('#successcontact').removeClass('w3-hide');
         }
       );
@@ -147,7 +147,9 @@
           nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       </div>
     </div>
-    <h3 class="w3-center w3-padding-16">Idiomas <i class="fa fa-comments w3-margin-left"></i></h3>
+    <h3 class="w3-center w3-padding-16">Idiomas
+      <i class="fa fa-comments w3-margin-left"></i>
+    </h3>
     <p class="w3-wide">
       Español</p>
     <div class="w3-light-grey">
@@ -165,7 +167,7 @@
     </div>
   </div>
 
-  <div class="w3-row w3-center w3-dark-grey w3-padding-16">
+  <div class="w3-row w3-center w3-padding-16">
     <h3>Lenguages que mayormente uso</h3>
     <div class="w3-content">
       <div class="w3-quarter w3-section">
@@ -194,7 +196,7 @@
       </div>
     </div>
   </div>
-  <div class="w3-row w3-center w3-dark-grey w3-padding-16">
+  <div class="w3-row w3-center w3-padding-16">
     <h3>Algunas herramientas</h3>
     <div class="w3-content">
       <div class="w3-quarter w3-section">
@@ -223,7 +225,7 @@
       </div>
     </div>
   </div>
-  <div class="w3-row w3-center w3-dark-grey w3-padding-16">
+  <div class="w3-row w3-center w3-padding-16">
     <div class="w3-content">
       <div class="w3-half w3-section">
         <span class="w3-xxxlarge">
@@ -240,128 +242,132 @@
     </div>
   </div>
 
+  <!-- Second Image with Portfolio Text -->
+  <div class="bgimg-2 w3-display-container w3-opacity-min">
+    <div class="w3-display-middle">
+      <span class="w3-xxlarge w3-text-white w3-wide">PORTAFOLIO</span>
+    </div>
+  </div>
 
-    <!-- Second Image with Portfolio Text -->
-    <div class="bgimg-2 w3-display-container w3-opacity-min">
-      <div class="w3-display-middle">
-        <span class="w3-xxlarge w3-text-white w3-wide">PORTAFOLIO</span>
+  <!-- Portfolio Section -->
+  <div class="w3-content w3-container w3-padding-64" id="portfolio">
+    <h3 class="w3-center">MI TRABAJO</h3>
+    <p class="w3-center">
+      <em>El siguiente proyecto es una muestra de mi trabajo.
+        <br> Click on the images to make them bigger</em>
+    </p>
+    <br>
+
+    <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+    <div class="w3-row-padding w3-center">
+      <div class="w3-col m3">
+        <img src="/w3images/p1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
+      </div>
+
+      <div class="w3-col m3">
+        <img src="/w3images/p2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
+      </div>
+
+      <div class="w3-col m3">
+        <img src="/w3images/p3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
+      </div>
+
+      <div class="w3-col m3">
+        <img src="/w3images/p4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
       </div>
     </div>
 
-    <!-- Portfolio Section -->
-    <div class="w3-content w3-container w3-padding-64" id="portfolio">
-      <h3 class="w3-center">MI TRABAJO</h3>
-      <p class="w3-center">
-        <em>El siguiente proyecto es una muestra de mi trabajo.
-          <br> Click on the images to make them bigger</em>
-      </p>
-      <br>
-
-      <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
-      <div class="w3-row-padding w3-center">
-        <div class="w3-col m3">
-          <img src="/w3images/p1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
-        </div>
-
-        <div class="w3-col m3">
-          <img src="/w3images/p2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
-        </div>
-
-        <div class="w3-col m3">
-          <img src="/w3images/p3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
-        </div>
-
-        <div class="w3-col m3">
-          <img src="/w3images/p4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
-        </div>
+    <div class="w3-row-padding w3-center w3-section">
+      <div class="w3-col m3">
+        <img src="/w3images/p5.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist">
       </div>
 
-      <div class="w3-row-padding w3-center w3-section">
-        <div class="w3-col m3">
-          <img src="/w3images/p5.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist">
-        </div>
-
-        <div class="w3-col m3">
-          <img src="/w3images/p6.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="My beloved typewriter">
-        </div>
-
-        <div class="w3-col m3">
-          <img src="/w3images/p7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Empty ghost train">
-        </div>
-
-        <div class="w3-col m3">
-          <img src="/w3images/p8.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
-        </div>
-        <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button>
+      <div class="w3-col m3">
+        <img src="/w3images/p6.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="My beloved typewriter">
       </div>
+
+      <div class="w3-col m3">
+        <img src="/w3images/p7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Empty ghost train">
+      </div>
+
+      <div class="w3-col m3">
+        <img src="/w3images/p8.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
+      </div>
+      <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button>
     </div>
+  </div>
 
-    <!-- Modal for full size images on click-->
-    <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-      <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image">
-        <i class="fa fa-remove"></i>
-      </span>
-      <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-        <img id="img01" class="w3-image">
-        <p id="caption" class="w3-opacity w3-large"></p>
-      </div>
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+    <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image">
+      <i class="fa fa-remove"></i>
+    </span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption" class="w3-opacity w3-large"></p>
     </div>
+  </div>
 
-    <!-- Third image with contact text -->
-    <div class="bgimg-3 w3-display-container w3-opacity-min">
-      <div class="w3-display-middle">
-        <span class="w3-xxlarge w3-text-white w3-wide">CONTACTO</span>
-      </div>
+  <!-- Third image with contact text -->
+  <div class="bgimg-3 w3-display-container w3-opacity-min">
+    <div class="w3-display-middle">
+      <span class="w3-xxlarge w3-text-white w3-wide">CONTACTO</span>
     </div>
+  </div>
 
-    <!-- Contact Section -->
-    <div class="w3-content w3-container w3-padding-64" id="contact">
-      <p class="w3-center">
-        <em>Ante cualquier duda puede contactarme a mi email personal o a traves del siguiente formulario.</em>
-      </p>
+  <!-- Contact Section -->
+  <div class="w3-content w3-container w3-padding-64" id="contact">
+    <p class="w3-center">
+      Ante cualquier duda puede contactarme a mi email personal o a traves del siguiente formulario.
+    </p>
 
-      <div class="w3-row w3-padding-32 w3-section">
-        <div class="w3-col m12 w3-panel">
-          <div class="w3-large w3-margin-bottom">
-            <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Rosario, Santa fe, Argentina
-            <br>
-            <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i><span id="webemail">Email: </span>
-            <br>
-            <div id="successcontact" class="w3-panel w3-green w3-card-4 w3-hide"><p>Mensaje enviado<i class="fa fa-check w3-margin-left"></i></p></div>
+    <div class="w3-row w3-padding-32 w3-section">
+      <div class="w3-col m12 w3-panel">
+        <div class="w3-large w3-margin-bottom">
+          <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Rosario, Santa fe, Argentina
+          <br>
+          <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i>
+          <span id="webemail">Email: </span>
+          <br>
+          <div id="successcontact" class="w3-panel w3-green w3-card-4 w3-hide">
+            <p>Mensaje enviado
+              <i class="fa fa-check w3-margin-left"></i>
+            </p>
           </div>
-          <form id="contactform">
-            <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-              <div class="w3-half">
-                <input class="w3-input w3-border" type="text" placeholder="Nombre" required name="name">
-              </div>
-              <div class="w3-half">
-                <input class="w3-input w3-border" type="email" placeholder="Email" required name="email">
-              </div>
-            </div>
-            <textarea class="w3-input w3-border" placeholder="Mensaje" required name="message"></textarea>
-            <button class="w3-button w3-black w3-right w3-section" type="submit">
-              <i class="fa fa-paper-plane"></i> ENVIAR
-            </button>
-          </form>
         </div>
+        <form id="contactform">
+          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Nombre" required name="name">
+            </div>
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="email" placeholder="Email" required name="email">
+            </div>
+          </div>
+          <textarea class="w3-input w3-border" placeholder="Mensaje" required name="message"></textarea>
+          <button class="w3-button w3-black w3-right w3-section" type="submit">
+            <i class="fa fa-paper-plane"></i> ENVIAR
+          </button>
+        </form>
       </div>
     </div>
+  </div>
 
-    <!-- Footer -->
-    <footer class="w3-center w3-black w3-padding-64">
-      <a href="#home" class="w3-button w3-white w3-circle">
-        <i class="fa fa-arrow-up"></i>
-      </a>
-      <div class="w3-xlarge w3-section">
-        <a href="https://www.instagram.com/lautaguirre">
-          <i class="fa fa-instagram w3-hover-opacity"></i></a>
-        <a href="https://github.com/lautaguirre">
-          <i class="fa fa-github w3-hover-opacity"></i></a>
-        <!-- <a href="">
+  <!-- Footer -->
+  <footer class="w3-center w3-dark-grey w3-padding-64">
+    <a href="#home" class="w3-button w3-black w3-circle">
+      <i class="fa fa-arrow-up"></i>
+    </a>
+    <div class="w3-xxlarge w3-section">
+      <a href="https://www.instagram.com/lautaguirre">
+        <i class="fa fa-instagram w3-hover-opacity"></i></a>
+      <a href="https://github.com/lautaguirre">
+        <i class="fa fa-github w3-hover-opacity"></i></a>
+      <!-- <a href="">
         <i class="fa fa-linkedin w3-hover-opacity"></i>
       </a> -->
-      </div>
-    </footer>
+    </div>
+  </footer>
 
 </body>
 
