@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+<link rel="stylesheet" href="index.css" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function () {
+    // Add smooth scrolling
+    $("#myNavbar a, #navDemo a, footer a[href='#home']").on('click', function (event) {
+      if (this.hash !== "") {
+        // Prevent default anchor click behavior
+        event.preventDefault();
+
+        // Store hash
+        var hash = this.hash;
+
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 900, function () { //900 miliseconds to scroll to te desired area
+
+          window.location.hash = hash;
+        });
+      }
+    });
+
+    //Antispam email
+    var vmmail='lauta.nahuel94';
+    var vmdomain='gmail.com';
+    $('#webemail').append(' '+vmmail+'@'+vmdomain);
+
+    //Send contact email
+    $('#sendcontactbtn').click(function(){
+			contactname=$('#contactname').val();
+      contactemail=$('#contactemail').val();
+      contactcomment=$('#contactcomment').val();
+      $('#contactname').val('');
+      $('#contactemail').val('');
+
+			$.post(
+	      'contactemail.php',
+        {
+					cname:contactname,
+          cemail:contactemail,
+          ccomment:contactcomment
+        },
+    	  function(data){
+					$('#contactcomment').val('Mensaje enviado');
+        }
+      );
+    });
+
+    // this is the id of the form
+    $("#contactform").submit(function(e){
+
+      $.post(
+        'contactemail.php',
+        $("#idForm").serialize(), // serializes the form's elements.
+        function(data){
+          alert(data); // show response from the php script.
+        }
+      );
+
+      e.preventDefault(); // avoid to execute the actual submit of the form.
+    });
+  });
+
+  // Modal Image Gallery
+  function onClick(element) {
+    document.getElementById("img01").src = element.src;
+    document.getElementById("modal01").style.display = "block";
+    var captionText = document.getElementById("caption");
+    captionText.innerHTML = element.alt;
+  }
+
+  // Change style of navbar on scroll
+  window.onscroll = function () { myFunction() };
+  function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+    } else {
+      navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+    }
+  }
+
+  // Used to toggle the menu on small screens when clicking on the menu button
+  function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+      x.className += " w3-show";
+    } else {
+      x.className = x.className.replace(" w3-show", "");
+    }
+  }
+</script>
+
+<body>
+  <!-- Navbar (sit on top) -->
+  <div class="w3-top">
+    <div class="w3-bar" id="myNavbar">
+      <div class="w3-content">
+        <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()"
+          title="Toggle Navigation Menu">
+          <i class="fa fa-bars"></i>
+        </a>
+        <a href="#home" class="w3-bar-item w3-button">INICIO</a>
+        <a href="#about" class="w3-bar-item w3-button w3-hide-small">
+          <i class="fa fa-user"></i> SOBRE MI</a>
+        <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small">
+          <i class="fa fa-th"></i> PORTAFOLIO</a>
+        <a href="#contact" class="w3-bar-item w3-button w3-hide-small">
+          <i class="fa fa-envelope"></i> CONTACTO</a>
+      </div>
+    </div>
+
+    <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+      <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">SOBRE MI</a>
+      <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTAFOLIO</a>
+      <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACTO</a>
+    </div>
+  </div>
+
+  <!-- First Image with Logo Text -->
+  <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+    <div class="w3-display-middle" style="white-space:nowrap;">
+      <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">
+        <span class="w3-hide-small">LAUTARO</span> AGUIRRE</span>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <div class="w3-content w3-container w3-padding-64" id="about">
+    <h3 class="w3-center">SOBRE MI</h3>
+    <p class="w3-center">
+      <em>I love photography</em>
+    </p>
+    <p>We have created a fictional "personal" website/blog, and our fictional character is a hobby photographer. Lorem ipsum
+      dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+      enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+      irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+      ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <div class="w3-row">
+      <div class="w3-col m6 w3-center w3-padding-large">
+        <p>
+          <b>
+            <i class="fa fa-user w3-margin-right"></i>My Name</b>
+        </p>
+        <br>
+        <img src="/w3images/avatar_hat.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500"
+          height="333">
+      </div>
+
+      <!-- Hide this text on small devices -->
+      <div class="w3-col m6 w3-hide-small w3-padding-large">
+        <p>Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
+          adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+          nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+    </div>
+    <h3 class="w3-center w3-padding-16">Idiomas <i class="fa fa-comments w3-margin-left"></i></h3>
+    <p class="w3-wide">
+      Español</p>
+    <div class="w3-light-grey">
+      <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:100%">100%</div>
+    </div>
+    <p class="w3-wide">
+      Ingles</p>
+    <div class="w3-light-grey">
+      <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:75%">75%</div>
+    </div>
+    <p class="w3-wide">
+      Portugues</p>
+    <div class="w3-light-grey">
+      <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:75%">75%</div>
+    </div>
+  </div>
+
+  <div class="w3-row w3-center w3-dark-grey w3-padding-16">
+    <h3>Lenguages que mayormente uso</h3>
+    <div class="w3-content">
+      <div class="w3-quarter w3-section">
+        <span class="w3-xxxlarge">
+          <i class="fa fa-html5"></i>
+        </span>
+        <br> HTML5
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xxxlarge">
+          <i class="fa fa-css3"></i>
+        </span>
+        <br> CSS3
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xxxlarge">
+          <i class="fa fa-javascript"></i>
+        </span>
+        <br> Javascript
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xxxlarge">
+          <i class="fa fa-php"></i>
+        </span>
+        <br> PHP
+      </div>
+    </div>
+  </div>
+  <div class="w3-row w3-center w3-dark-grey w3-padding-16">
+    <h3>Algunas herramientas</h3>
+    <div class="w3-content">
+      <div class="w3-quarter w3-section">
+        <span class="w3-xxxlarge">
+          <i class="fa fa-json"></i>
+        </span>
+        <br> JSON
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xxxlarge">
+          <i class="fa fa-ajax"></i>
+        </span>
+        <br> AJAX
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xxxlarge">
+          <i class="fa fa-github"></i>
+        </span>
+        <br> Github
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xxxlarge">
+          <i class="fa fa-bootstrap"></i>
+        </span>
+        <br> Bootstrap
+      </div>
+    </div>
+  </div>
+  <div class="w3-row w3-center w3-dark-grey w3-padding-16">
+    <div class="w3-content">
+      <div class="w3-half w3-section">
+        <span class="w3-xxxlarge">
+          <i class="fa fa-mysql"></i>
+        </span>
+        <br> MySQL
+      </div>
+      <div class="w3-half w3-section">
+        <span class="w3-xxxlarge">
+          <i class="fa fa-jquery"></i>
+        </span>
+        <br> jQuery
+      </div>
+    </div>
+  </div>
+
+
+    <!-- Second Image with Portfolio Text -->
+    <div class="bgimg-2 w3-display-container w3-opacity-min">
+      <div class="w3-display-middle">
+        <span class="w3-xxlarge w3-text-white w3-wide">PORTAFOLIO</span>
+      </div>
+    </div>
+
+    <!-- Portfolio Section -->
+    <div class="w3-content w3-container w3-padding-64" id="portfolio">
+      <h3 class="w3-center">MI TRABAJO</h3>
+      <p class="w3-center">
+        <em>El siguiente proyecto es una muestra de mi trabajo.
+          <br> Click on the images to make them bigger</em>
+      </p>
+      <br>
+
+      <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+      <div class="w3-row-padding w3-center">
+        <div class="w3-col m3">
+          <img src="/w3images/p1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
+        </div>
+
+        <div class="w3-col m3">
+          <img src="/w3images/p2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
+        </div>
+
+        <div class="w3-col m3">
+          <img src="/w3images/p3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
+        </div>
+
+        <div class="w3-col m3">
+          <img src="/w3images/p4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
+        </div>
+      </div>
+
+      <div class="w3-row-padding w3-center w3-section">
+        <div class="w3-col m3">
+          <img src="/w3images/p5.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist">
+        </div>
+
+        <div class="w3-col m3">
+          <img src="/w3images/p6.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="My beloved typewriter">
+        </div>
+
+        <div class="w3-col m3">
+          <img src="/w3images/p7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Empty ghost train">
+        </div>
+
+        <div class="w3-col m3">
+          <img src="/w3images/p8.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
+        </div>
+        <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button>
+      </div>
+    </div>
+
+    <!-- Modal for full size images on click-->
+    <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+      <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image">
+        <i class="fa fa-remove"></i>
+      </span>
+      <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+        <img id="img01" class="w3-image">
+        <p id="caption" class="w3-opacity w3-large"></p>
+      </div>
+    </div>
+
+    <!-- Third image with contact text -->
+    <div class="bgimg-3 w3-display-container w3-opacity-min">
+      <div class="w3-display-middle">
+        <span class="w3-xxlarge w3-text-white w3-wide">CONTACTO</span>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="w3-content w3-container w3-padding-64" id="contact">
+      <p class="w3-center">
+        <em>Ante cualquier duda puede contactarme a mi email personal o a traves del siguiente formulario.</em>
+      </p>
+
+      <div class="w3-row w3-padding-32 w3-section">
+        <div class="w3-col m12 w3-panel">
+          <div class="w3-large w3-margin-bottom">
+            <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Rosario, Santa fe, Argentina
+            <br>
+            <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i><span id="webemail">Email: </span>
+            <br>
+          </div>
+          <form id="contactform">
+            <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+              <div class="w3-half">
+                <input class="w3-input w3-border" type="text" placeholder="Nombre" required name="Name">
+              </div>
+              <div class="w3-half">
+                <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+              </div>
+            </div>
+            <textarea class="w3-input w3-border" placeholder="Mensaje" required name="Message"></textarea>
+            <button class="w3-button w3-black w3-right w3-section" type="submit">
+              <i class="fa fa-paper-plane"></i> ENVIAR
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w3-center w3-black w3-padding-64">
+      <a href="#home" class="w3-button w3-white w3-circle">
+        <i class="fa fa-arrow-up"></i>
+      </a>
+      <div class="w3-xlarge w3-section">
+        <a href="https://www.instagram.com/lautaguirre">
+          <i class="fa fa-instagram w3-hover-opacity"></i></a>
+        <a href="https://github.com/lautaguirre">
+          <i class="fa fa-github w3-hover-opacity"></i></a>
+        <!-- <a href="">
+        <i class="fa fa-linkedin w3-hover-opacity"></i>
+      </a> -->
+      </div>
+    </footer>
+
+</body>
+
+</html>
