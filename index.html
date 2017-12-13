@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
+<title>Lautaro Aguirre</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" type="text/css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
@@ -45,6 +46,11 @@
       );
 
       e.preventDefault(); //Avoid default submit
+    });
+
+    //More portfolio slide
+    $("#moreportfolioclick").click(function(){
+      $("#moreportfolio").slideToggle();
     });
   });
 
@@ -253,8 +259,26 @@
   <div class="w3-content w3-container w3-padding-64" id="portfolio">
     <h3 class="w3-center">MI TRABAJO</h3>
     <p class="w3-center">
-      <em>El siguiente proyecto es una muestra de mi trabajo.
-        <br> Click on the images to make them bigger</em>
+      <p>
+        El siguiente proyecto fue creado enteramente por mi, se trata de una web que se encarga de gestionar reservas de consultorios
+        por hora para que ciertos profesionales puedan desarrollar sus actividades. Los clientes, luego de loguearse con su cuenta, 
+        pueden ver mediante un calendario la disponibilidad horaria de las oficinas y realizar la reserva correspondiente a sus
+        intereses mediante una interfaz muy intuitiva. Tambien cuenta con un panel de admin donde los propietarios pueden crear, 
+        actualizar, inhabilitar y consultar los datos de los usuarios como asi tambien las reservas realizadas en cada mes.
+      </p>
+      <div class="w3-center">
+        <button id="moreportfolioclick" class="w3-button w3-padding-large w3-black">MAS INFORMACION</button>
+      </div>
+      <div id="moreportfolio" style="display:none;">
+        <p>Para desarrollar este sistema web utilice los siguientes componentes:</p>
+        <ul>
+          <li><strong>Diseño:</strong> HTML y CSS con Bootstrap 3</li>
+          <li><strong>Front-end:</strong> Javascript con jQuery</li>
+          <li><strong>Intercambio de datos:</strong> Ajax con JSON</li>
+          <li><strong>Back-end:</strong> PHP</li>
+          <li><strong>Base de datos:</strong> MySQL</li>
+        </ul>
+      </div>
     </p>
     <br>
 
@@ -275,25 +299,6 @@
       <div class="w3-col m3">
         <img src="/w3images/p4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
       </div>
-    </div>
-
-    <div class="w3-row-padding w3-center w3-section">
-      <div class="w3-col m3">
-        <img src="/w3images/p5.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/w3images/p6.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="My beloved typewriter">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/w3images/p7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Empty ghost train">
-      </div>
-
-      <div class="w3-col m3">
-        <img src="/w3images/p8.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
-      </div>
-      <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button>
     </div>
   </div>
 
