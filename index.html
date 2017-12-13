@@ -1,88 +1,91 @@
 <!DOCTYPE html>
 <html>
-<title>Lautaro Aguirre</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" type="text/css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-<link rel="stylesheet" href="css/index.css" type="text/css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-  $(document).ready(function () {
-    // Add smooth scrolling
-    $("#myNavbar a, #navDemo a, footer a[href='#home']").on('click', function (event) {
-      if (this.hash !== "") {
-        // Prevent default anchor click behavior
-        event.preventDefault();
+<head>
+  <title>Lautaro Aguirre</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" type="text/css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="css/index.css" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // Add smooth scrolling
+      $("#myNavbar a, #navDemo a, footer a[href='#home']").on('click', function (event) {
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
 
-        // Store hash
-        var hash = this.hash;
+          // Store hash
+          var hash = this.hash;
 
-        $('html, body').animate({
-          scrollTop: $(hash).offset().top
-        }, 900, function () { //900 miliseconds to scroll to te desired area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 900, function () { //900 miliseconds to scroll to te desired area
 
-          window.location.hash = hash;
-        });
-      }
-    });
-
-    //Antispam email
-    var vmmail = 'lauta.nahuel94';
-    var vmdomain = 'gmail.com';
-    $('#webemail').append(' ' + vmmail + '@' + vmdomain);
-
-    //Send contact email
-    $("#contactform").submit(function (e) {
-
-      $.post(
-        'scripts/contactemail.php',
-        $("#contactform").serialize(),
-        function (data) {
-          $('#successcontact').removeClass('w3-hide');
+            window.location.hash = hash;
+          });
         }
-      );
+      });
 
-      e.preventDefault(); //Avoid default submit
+      //Antispam email
+      var vmmail = 'lauta.nahuel94';
+      var vmdomain = 'gmail.com';
+      $('#webemail').append(' ' + vmmail + '@' + vmdomain);
+
+      //Send contact email
+      $("#contactform").submit(function (e) {
+
+        $.post(
+          'scripts/contactemail.php',
+          $("#contactform").serialize(),
+          function (data) {
+            $('#successcontact').removeClass('w3-hide');
+          }
+        );
+
+        e.preventDefault(); //Avoid default submit
+      });
+
+      //More portfolio slide
+      $("#moreportfolioclick").click(function () {
+        $("#moreportfolio").slideToggle();
+      });
+
+      //Close modal clicking outside
+      var modal = document.getElementById('modal01');
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+
     });
 
-    //More portfolio slide
-    $("#moreportfolioclick").click(function(){
-      $("#moreportfolio").slideToggle();
-    });
-  });
-
-  // Modal Image Gallery
-  function onClick(element) {
-    document.getElementById("img01").src = element.src;
-    document.getElementById("modal01").style.display = "block";
-    var captionText = document.getElementById("caption");
-    captionText.innerHTML = element.alt;
-  }
-
-  // Change style of navbar on scroll
-  window.onscroll = function () { myFunction() };
-  function myFunction() {
-    var navbar = document.getElementById("myNavbar");
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-      navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
-    } else {
-      navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+    // Change style of navbar on scroll
+    window.onscroll = function () { myFunction() };
+    function myFunction() {
+      var navbar = document.getElementById("myNavbar");
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+      } else {
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+      }
     }
-  }
 
-  // Used to toggle the menu on small screens when clicking on the menu button
-  function toggleFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-      x.className += " w3-show";
-    } else {
-      x.className = x.className.replace(" w3-show", "");
+    // Used to toggle the menu on small screens when clicking on the menu button
+    function toggleFunction() {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else {
+        x.className = x.className.replace(" w3-show", "");
+      }
     }
-  }
-</script>
+  </script>
+</head>
 
 <body>
   <!-- Navbar (sit on top) -->
@@ -144,7 +147,7 @@
       </div>
 
       <!-- Hide this text on small devices -->
-      <div class="w3-col m6 w3-hide-small w3-padding-large">
+      <div class="w3-col m6 w3-padding-large">
         <p>Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
           dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
@@ -203,7 +206,7 @@
     </div>
   </div>
   <div class="w3-row w3-center w3-padding-16">
-    <h3>Algunas herramientas</h3>
+    <h3>Algunas utilidades</h3>
     <div class="w3-content">
       <div class="w3-quarter w3-section">
         <span class="w3-xxxlarge">
@@ -257,26 +260,35 @@
 
   <!-- Portfolio Section -->
   <div class="w3-content w3-container w3-padding-64" id="portfolio">
-    <h3 class="w3-center">MI TRABAJO</h3>
+    <h3 class="w3-center">MI TRABAJO
+      <br>
+      <a class="w3-text-black w3-hover-opacity" href="https://villamartinarosario.com">Villa Martina Consultorios</a>
+    </h3>
     <p class="w3-center">
       <p>
-        El siguiente proyecto fue creado enteramente por mi, se trata de una web que se encarga de gestionar reservas de consultorios
-        por hora para que ciertos profesionales puedan desarrollar sus actividades. Los clientes, luego de loguearse con su cuenta, 
-        pueden ver mediante un calendario la disponibilidad horaria de las oficinas y realizar la reserva correspondiente a sus
-        intereses mediante una interfaz muy intuitiva. Tambien cuenta con un panel de admin donde los propietarios pueden crear, 
-        actualizar, inhabilitar y consultar los datos de los usuarios como asi tambien las reservas realizadas en cada mes.
+        Este proyecto fue creado enteramente por mi, se trata de una web con un diseño responsivo que se encarga de gestionar reservas
+        de consultorios por hora para que ciertos profesionales puedan desarrollar sus actividades. Los clientes, luego de
+        loguearse con su cuenta, pueden ver mediante un calendario la disponibilidad horaria de las oficinas y realizar la
+        reserva correspondiente a sus intereses mediante una interfaz muy intuitiva. Tambien cuenta con un panel de admin
+        donde los propietarios pueden crear, actualizar, inhabilitar y consultar los datos de los usuarios como asi tambien
+        las reservas realizadas en cada mes.
       </p>
       <div class="w3-center">
-        <button id="moreportfolioclick" class="w3-button w3-padding-large w3-black">MAS INFORMACION</button>
+        <button id="moreportfolioclick" class="w3-button w3-padding-large w3-black">MAS INFORMACION DEL PROYECTO</button>
       </div>
       <div id="moreportfolio" style="display:none;">
-        <p>Para desarrollar este sistema web utilice los siguientes componentes:</p>
+        <p>Para desarrollar este sistema web utilice las siguientes herramientas:</p>
         <ul>
-          <li><strong>Diseño:</strong> HTML y CSS con Bootstrap 3</li>
-          <li><strong>Front-end:</strong> Javascript con jQuery</li>
-          <li><strong>Intercambio de datos:</strong> Ajax con JSON</li>
-          <li><strong>Back-end:</strong> PHP</li>
-          <li><strong>Base de datos:</strong> MySQL</li>
+          <li>
+            <strong>Front-end:</strong> HTML5 y CSS3 con Bootstrap 3 junto a Javascript con jQuery</li>
+          <li>
+            <strong>Intercambio de datos:</strong> Ajax con JSON</li>
+          <li>
+            <strong>Back-end:</strong> PHP</li>
+          <li>
+            <strong>Base de datos:</strong> MySQL</li>
+          <li>
+            <strong>Librerias:</strong> Fullcalendar para la interfaz del calendario y Moment.js para el manejo de fechas.</li>
         </ul>
       </div>
     </p>
@@ -284,32 +296,36 @@
 
     <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
     <div class="w3-row-padding w3-center">
-      <div class="w3-col m3">
-        <img src="/w3images/p1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
+
+      <div class="w3-col m4">
+        <img src="images/portfolio1.png" id='1' style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Inicio">
+        <p>Inicio</p>
       </div>
 
-      <div class="w3-col m3">
-        <img src="/w3images/p2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
+      <div class="w3-col m4">
+        <img src="images/portfolio2.png" id='2' style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Panel de usuario">
+        <p>Panel de usuario</p>
       </div>
 
-      <div class="w3-col m3">
-        <img src="/w3images/p3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
+      <div class="w3-col m4">
+        <img src="images/portfolio3.png" id='3' style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Panel de usuario">
+        <p>Panel de administrador</p>
       </div>
 
-      <div class="w3-col m3">
-        <img src="/w3images/p4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
-      </div>
     </div>
   </div>
 
   <!-- Modal for full size images on click-->
-  <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-    <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image">
+  <div id="modal01" class="w3-modal">
+    <span class="w3-button w3-medium w3-black w3-display-topright" title="Close Modal Image" onclick="document.getElementById('modal01').style.display='none'">
       <i class="fa fa-remove"></i>
     </span>
-    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-      <img id="img01" class="w3-image">
-      <p id="caption" class="w3-opacity w3-large"></p>
+    <div class="w3-modal-content w3-animate-top w3-center w3-transparent w3-padding-64" style="width:75%;">
+      <img src="images/portfolio1.png" class="mySlides w3-animate-opacity w3-image w3-round">
+      <img src="images/portfolio2.png" class="mySlides w3-animate-opacity w3-image w3-round">
+      <img src="images/portfolio3.png" class="mySlides w3-animate-opacity w3-image w3-round">
+      <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+      <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
     </div>
   </div>
 
@@ -374,6 +390,31 @@
     </div>
   </footer>
 
+  <script>
+    // Modal Image Gallery
+    function onClick(element) {
+      document.getElementById("modal01").style.display = "block";
+      slideIndex=parseInt(element.id);
+      showDivs(slideIndex);
+    }
+
+    //Modal slide
+
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+      var i;
+      var s = document.getElementsByClassName("mySlides");
+      if (n > s.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = s.length };
+      for (i = 0; i < s.length; i++) {
+        s[i].style.display = "none";
+      }
+      s[slideIndex - 1].style.display = "block";
+    }
+  </script>
 </body>
 
 </html>
