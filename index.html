@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Lautaro Aguirre</title>
   <meta charset="UTF-8">
@@ -13,7 +14,7 @@
   <script>
     $(document).ready(function () {
       // Add smooth scrolling
-      $("#myNavbar a, #navDemo a, footer a[href='#home']").on('click', function (event) {
+      $("#myNavbar a, #navDemo a, #aboutportfolio, footer a[href='#home']").on('click', function (event) {
         if (this.hash !== "") {
           // Prevent default anchor click behavior
           event.preventDefault();
@@ -47,11 +48,6 @@
         );
 
         e.preventDefault(); //Avoid default submit
-      });
-
-      //More portfolio slide
-      $("#moreportfolioclick").click(function () {
-        $("#moreportfolio").slideToggle();
       });
 
       //Close modal clicking outside
@@ -125,37 +121,76 @@
   <!-- About Section -->
   <div class="w3-content w3-container w3-padding-64" id="about">
     <h3 class="w3-center">SOBRE MI</h3>
-    <p class="w3-center">
-      <em>I love photography</em>
-    </p>
-    <p>We have created a fictional "personal" website/blog, and our fictional character is a hobby photographer. Lorem ipsum
-      dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-      enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-      irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-      ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    <div class="w3-row">
-      <div class="w3-col m6 w3-center w3-padding-large">
-        <p>
-          <b>
-            <i class="fa fa-user w3-margin-right"></i>My Name</b>
-        </p>
-        <br>
-        <img src="/w3images/avatar_hat.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500"
-          height="333">
-      </div>
 
-      <!-- Hide this text on small devices -->
-      <div class="w3-col m6 w3-padding-large">
-        <p>Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
-          adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-          nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <div class="w3-center w3-padding-large">
+      <img src="images/avatar.png" class="w3-circle w3-image w3-hide-small" width="150">
+    </div>
+
+    <!-- Hide this text on small devices -->
+    <div class="w3-padding-large">
+      <div class="w3-container">
+        <ul class="w3-ul w3-card-4">
+
+          <li class="w3-bar">
+            <i class="fa fa-user-circle-o w3-bar-item w3-xxxlarge"></i>
+            <div class="w3-bar-item">
+              <span class="w3-large"> Informacion personal</span>
+              <br>
+              <span>
+                <ul>
+                  <li>
+                    <strong>Nombre:</strong> Lautaro Nahuel Aguirre</li>
+                  <li>
+                    <strong>Fecha de nacimiento:</strong> 14/07/1994
+                    <br>(23 años)</li>
+                </ul>
+              </span>
+            </div>
+          </li>
+
+          <li class="w3-bar">
+            <i class="fa fa-graduation-cap w3-bar-item w3-xxxlarge"></i>
+            <div class="w3-bar-item">
+              <span class="w3-large">Educacion</span>
+              <br>
+              <span>
+                <ul>
+                  <li>
+                    <strong>Nivel secundario:</strong> Instituto San Juan Bautista de La Salle
+                    <br>(Economía y gestión de las organizaciones).</li>
+                  <li>
+                    <strong>Nivel universitario:</strong> Cursando estudios en Lic. En Administración de empresas en la Facultad
+                    de ciencias económicas y estadística.</li>
+                </ul>
+              </span>
+            </div>
+          </li>
+
+          <li class="w3-bar">
+            <i class="fa fa-briefcase w3-bar-item w3-xxxlarge"></i>
+            <div class="w3-bar-item">
+              <span class="w3-large">Experiencia laboral</span>
+              <br>
+              <span>
+                <ul>
+                  <li>Empleado en el centro de esquí <strong>“Park City Mountain Resort”</strong> ubicado en Utah, Estados Unidos, durante 5 meses.
+                    Encargado de ocupar puestos como cajero, mesero, bartender y barista tanto en el sector de comida rápida
+                    como en un local de Starbucks.
+                    <br> Sitio web:
+                    <a target="_blank" class="w3-hover-opacity" href="https://www.parkcitymountain.com">PCMR</a>
+                  </li>
+                  <li>Proyectos propios como los que estan ubicados en la seccion
+                    <a id="aboutportfolio" class="w3-hover-opacity" href="#portfolio">PORTAFOLIO</a>
+                  </li>
+                </ul>
+              </span>
+            </div>
+          </li>
+
+        </ul>
       </div>
     </div>
+
     <h3 class="w3-center w3-padding-16">Idiomas
       <i class="fa fa-comments w3-margin-left"></i>
     </h3>
@@ -262,7 +297,7 @@
   <div class="w3-content w3-container w3-padding-64" id="portfolio">
     <h3 class="w3-center">MI TRABAJO
       <br>
-      <a class="w3-text-black w3-hover-opacity" href="https://villamartinarosario.com">Villa Martina Consultorios</a>
+      <a class="w3-text-black w3-hover-opacity" target="_blank" href="https://villamartinarosario.com">Villa Martina Consultorios</a>
     </h3>
     <p class="w3-center">
       <p>
@@ -273,24 +308,19 @@
         donde los propietarios pueden crear, actualizar, inhabilitar y consultar los datos de los usuarios como asi tambien
         las reservas realizadas en cada mes.
       </p>
-      <div class="w3-center">
-        <button id="moreportfolioclick" class="w3-button w3-padding-large w3-black">MAS INFORMACION DEL PROYECTO</button>
-      </div>
-      <div id="moreportfolio" style="display:none;">
-        <p>Para desarrollar este sistema web utilice las siguientes herramientas:</p>
-        <ul>
-          <li>
-            <strong>Front-end:</strong> HTML5 y CSS3 con Bootstrap 3 junto a Javascript con jQuery</li>
-          <li>
-            <strong>Intercambio de datos:</strong> Ajax con JSON</li>
-          <li>
-            <strong>Back-end:</strong> PHP</li>
-          <li>
-            <strong>Base de datos:</strong> MySQL</li>
-          <li>
-            <strong>Librerias:</strong> Fullcalendar para la interfaz del calendario y Moment.js para el manejo de fechas.</li>
-        </ul>
-      </div>
+      <p>Para desarrollar este sistema web utilice las siguientes herramientas:</p>
+      <ul>
+        <li>
+          <strong>Front-end:</strong> HTML5 y CSS3 con Bootstrap 3 junto a Javascript con jQuery</li>
+        <li>
+          <strong>Intercambio de datos:</strong> Ajax con JSON</li>
+        <li>
+          <strong>Back-end:</strong> PHP</li>
+        <li>
+          <strong>Base de datos:</strong> MySQL</li>
+        <li>
+          <strong>Librerias:</strong> Fullcalendar para la interfaz del calendario y Moment.js para el manejo de fechas.</li>
+      </ul>
     </p>
     <br>
 
@@ -380,10 +410,8 @@
       <i class="fa fa-arrow-up"></i>
     </a>
     <div class="w3-xxlarge w3-section">
-      <a href="https://www.instagram.com/lautaguirre">
+      <a target="_blank" href="https://www.instagram.com/lautaguirre">
         <i class="fa fa-instagram w3-hover-opacity"></i></a>
-      <a href="https://github.com/lautaguirre">
-        <i class="fa fa-github w3-hover-opacity"></i></a>
       <!-- <a href="">
         <i class="fa fa-linkedin w3-hover-opacity"></i>
       </a> -->
@@ -394,7 +422,7 @@
     // Modal Image Gallery
     function onClick(element) {
       document.getElementById("modal01").style.display = "block";
-      slideIndex=parseInt(element.id);
+      slideIndex = parseInt(element.id);
       showDivs(slideIndex);
     }
 
