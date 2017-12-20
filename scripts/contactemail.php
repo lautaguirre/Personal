@@ -1,4 +1,5 @@
 <?php
+if(isset($_POST['name']) and isset($_POST['email']) and isset($_POST['message'])){
     $sname=strip_tags($_POST['name']);
     $semail=strip_tags($_POST['email']);
     $smessage=strip_tags($_POST['message']);
@@ -17,5 +18,5 @@
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
     $headers .= 'From: CV WEB <lauta.nahuel94@gmail.com>' . "\r\n";
     mail($to,$subject,$message,$headers);
-
+}
 ?>
