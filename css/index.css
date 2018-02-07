@@ -87,6 +87,10 @@
     width: 20%;
     content: url("../images/jquery.png");
   }
+  .fa-reactjs{
+    width: 13%;
+    content: url("../images/reactjs.png");
+  }
 
   /* Turn off parallax scrolling for tablets and phones */
 
