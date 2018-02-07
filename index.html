@@ -38,7 +38,7 @@
 
       //Send contact email
       $("#contactform").submit(function (e) {
-
+        $('#successcontact').addClass('w3-hide');
         $.post(
           'scripts/contactemail.php',
           $("#contactform").serialize(),
